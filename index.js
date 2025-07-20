@@ -18,8 +18,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan());
 app.use(cors({
-    origin: 'https://shehrity.netlify.app',
-    credentials: true,
+    origin: [
+      "https://shehrity.netlify.app",  // ✅ your frontend domain
+      "http://localhost:5173"          // ✅ for local dev (optional)
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true
   }));
 // Routes
 app.use('/api', userRoutes);
