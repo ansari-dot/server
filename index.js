@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(morgan());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://shehrity.netlify.app',
     credentials: true,
   }));
 // Routes
